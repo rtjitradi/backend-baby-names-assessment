@@ -56,7 +56,8 @@ def extract_names(filename):
     names.append(year)
 
     # get name-rank strings
-    pattern = r'<td>(\d+)</td><td>(\w+)/td><td>(\w+)</td>'
+    # <td>220</td><td>Tanner</td><td>Evelyn</td>
+    pattern = r'<td>(\d+)</td><td>(\w+)</td><td>(\w+)</td>'
     names_ranks = re.findall(pattern, text)
     names_to_rank = {}
     for rank_tuple in names_ranks:
@@ -119,4 +120,3 @@ def main(args):
 
 if __name__ == '__main__':
     main(sys.argv[1:])
-    
